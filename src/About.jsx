@@ -1,6 +1,9 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 const About =()=>{
+     let {name,age} = useParams()
+     console.log(name);
+     
      let nav = useNavigate()
      function contactpage(){
         nav('/contact')
@@ -9,7 +12,8 @@ const About =()=>{
         <>
         
         <h1>about</h1>
-        <button onClick={contactpage} >daba de</button>
+        <h1> my name is { name } and age { age } </h1>
+        <button onClick={ contactpage } >daba de</button>
         </>
     )
 }
